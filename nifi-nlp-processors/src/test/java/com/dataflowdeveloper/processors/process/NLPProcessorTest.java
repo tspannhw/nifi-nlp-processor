@@ -39,7 +39,7 @@ public class NLPProcessorTest {
 
 	@Test
 	public void testProcessor() {
-		testRunner.setProperty("sentence", "Tim Spann wrote some code to test NLP with Susan.");
+		testRunner.setProperty("sentence", "Tim Spann wrote some code to test NLP with Susan Smith and Doug Jones.");
 		try {
 			testRunner.enqueue(new FileInputStream(new File("src/test/resources/test.csv")));
 		} catch (FileNotFoundException e) {

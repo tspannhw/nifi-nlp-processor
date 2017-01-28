@@ -43,16 +43,6 @@ import org.apache.nifi.processor.Relationship;
 import org.apache.nifi.processor.exception.ProcessException;
 import org.apache.nifi.processor.io.OutputStreamCallback;
 import org.apache.nifi.processor.util.StandardValidators;
-import com.google.gson.Gson; 
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
- 
-import opennlp.tools.doccat.DoccatModel;
-import opennlp.tools.doccat.DocumentCategorizerME;
-import opennlp.tools.doccat.DocumentSampleStream;
-import opennlp.tools.util.ObjectStream;
-import opennlp.tools.util.PlainTextByLineStream;
    
 @Tags({"nlpprocessor"})
 @CapabilityDescription("Run OpenNLP Name Finder")
@@ -127,42 +117,27 @@ public class NLPProcessor extends AbstractProcessor {
 
         if ( sentence == null) {   
         	sentence = sentence2;
-        	getLogger().info("Input Sent:" + sentence);
+        	//getLogger().info("Input Sent:" + sentence);
         }
         
         service = new OpenNLPService();   
 
-        String outputJSON = null;
+        String value = null;
         
         try {
-        	//service.
+        	value = service.getPeople(sentence);
+        	
+        	if ( value == null) { 
+        		return;
+        	}
+
+			valueRef.set(value);        	
         }
         catch(Exception e) {
         	e.printStackTrace();
         }
         
-/*        SoupService soupService = new SoupService();
-        List<PrintableLink> value = null;
-        String outputJSON = null;
-        try {
-        	value = soupService.extract(url,null);
-			
-			if ( value == null) {
-				return;
-			}
-			
-			 Gson gson = new Gson();
-			 outputJSON = gson.toJson(value);	
-			 valueRef.set(outputJSON);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		*/
-
 		try {
-			//Output Flowfile			
-			//flowFile = session.putAttribute(flowFile, ATTRIBUTE_OUTPUT_NAME, outputJSON);
-
 			flowFile = session.write(flowFile, new OutputStreamCallback() {
 				@Override
 				public void process(OutputStream out) throws IOException {

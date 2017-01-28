@@ -25,8 +25,7 @@ import opennlp.tools.util.Span;
  *
  */
 public class OpenNLPService {
-//	private static final String CURRENT_DIR = System.getProperty("user.dir");
-	private static final String CURRENT_DIR = "/Volumes/Transcend/projects/nifi-nlp-processor";
+	private static final String CURRENT_DIR = System.getProperty("user.dir");
 	private static final String CURRENT_FILE = CURRENT_DIR + "/input/en-ner-person.bin";
 	private static final String CURRENT_TOKEN_FILE = CURRENT_DIR + "/input/en-token.bin";
 	

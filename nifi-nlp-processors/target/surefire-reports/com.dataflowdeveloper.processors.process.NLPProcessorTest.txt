@@ -1,18 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.dataflowdeveloper.processors.process.NLPProcessorTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.121 sec <<< FAILURE! - in com.dataflowdeveloper.processors.process.NLPProcessorTest
-testProcessor(com.dataflowdeveloper.processors.process.NLPProcessorTest)  Time elapsed: 0.12 sec  <<< FAILURE!
-java.lang.AssertionError: Processor has 2 validation failures:
-'sentence' is invalid because sentence is required
-'url' validated against 'http://sparkdeveloper.com' is invalid because 'url' is not a supported property
-
-	at org.junit.Assert.fail(Assert.java:88)
-	at org.apache.nifi.util.MockProcessContext.assertValid(MockProcessContext.java:251)
-	at org.apache.nifi.util.StandardProcessorTestRunner.run(StandardProcessorTestRunner.java:160)
-	at org.apache.nifi.util.StandardProcessorTestRunner.run(StandardProcessorTestRunner.java:151)
-	at org.apache.nifi.util.StandardProcessorTestRunner.run(StandardProcessorTestRunner.java:146)
-	at org.apache.nifi.util.StandardProcessorTestRunner.run(StandardProcessorTestRunner.java:141)
-	at org.apache.nifi.util.StandardProcessorTestRunner.run(StandardProcessorTestRunner.java:136)
-	at com.dataflowdeveloper.processors.process.NLPProcessorTest.testProcessor(NLPProcessorTest.java:49)
-
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.911 sec - in com.dataflowdeveloper.processors.process.NLPProcessorTest

@@ -1,2 +1,2 @@
-# linkextractorprocessor
-Apache NiFi Custom Processor For Link Extracting
+# nlp-processor 
+Apache NiFi Custom Processor For OpenNLP Name Extraction (Entity)

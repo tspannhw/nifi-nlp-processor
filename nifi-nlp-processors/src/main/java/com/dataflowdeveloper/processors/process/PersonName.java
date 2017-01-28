@@ -1,7 +1,18 @@
 package com.dataflowdeveloper.processors.process;
 
-public class PersonName {
+import java.io.Serializable;
 
+/**
+ * 
+ * @author tspann
+ *
+ */
+public class PersonName implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -864130114213352566L;
 	
 	private String name = "";
 
@@ -36,8 +47,5 @@ public class PersonName {
 	public PersonName(String name) {
 		super();
 		this.name = name;
-	}
-
-	
-	
+	}	
 }
