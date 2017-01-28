@@ -18,12 +18,12 @@
 
     <parent>
         <groupId>com.dataflowdeveloper</groupId>
-        <artifactId>linkextractor</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <artifactId>nlp-processor</artifactId>
+        <version>1.0</version>
     </parent>
 
-    <artifactId>nifi-linkextractor-nar</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <artifactId>nifi-nlp-nar</artifactId>
+    <version>1.0</version>
     <packaging>nar</packaging>
     <properties>
         <maven.javadoc.skip>true</maven.javadoc.skip>
@@ -33,8 +33,8 @@
     <dependencies>
         <dependency>
             <groupId>com.dataflowdeveloper</groupId>
-            <artifactId>nifi-process-processors</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <artifactId>nifi-nlp-processors</artifactId>
+            <version>1.0</version>
         </dependency>
     </dependencies>
 

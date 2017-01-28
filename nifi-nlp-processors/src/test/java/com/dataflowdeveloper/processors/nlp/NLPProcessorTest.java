@@ -39,7 +39,7 @@ public class NLPProcessorTest {
 
 	@Test
 	public void testProcessor() {
-		testRunner.setProperty("url", "http://sparkdeveloper.com");
+		testRunner.setProperty("sentence", "Tim Spann wrote some code to test NLP with Susan.");
 		try {
 			testRunner.enqueue(new FileInputStream(new File("src/test/resources/test.csv")));
 		} catch (FileNotFoundException e) {
@@ -50,14 +50,10 @@ public class NLPProcessorTest {
 		testRunner.assertValid();
 		List<MockFlowFile> successFiles = testRunner.getFlowFilesForRelationship(NLPProcessor.REL_SUCCESS);
 
-//		for (ProvenanceEventRecord events : testRunner.getProvenanceEvents()) {
-//			System.out.println("Output: " + events.getAttributes().get(LinkProcessor.ATTRIBUTE_OUTPUT_NAME));
-//		}
-
 		for (MockFlowFile mockFile : successFiles) {
 			try {
 				System.out.println("FILE:" + new String(mockFile.toByteArray(), "UTF-8"));
-				//System.out.println("Attribute: " + mockFile.getAttribute(LinkProcessor.ATTRIBUTE_OUTPUT_NAME));
+				//System.out.println("Attribute: " + mockFile.getAttribute(NLPProcessor.));
 
 			} catch (UnsupportedEncodingException e) {
 				e.printStackTrace();

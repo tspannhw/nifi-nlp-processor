@@ -53,39 +53,40 @@ import opennlp.tools.doccat.DocumentCategorizerME;
 import opennlp.tools.doccat.DocumentSampleStream;
 import opennlp.tools.util.ObjectStream;
 import opennlp.tools.util.PlainTextByLineStream;
-
+   
 @Tags({"nlpprocessor"})
-@CapabilityDescription("Extract links from a URL, parses HTML.")
+@CapabilityDescription("Run OpenNLP Name Finder")
 @SeeAlso({})
 @ReadsAttributes({@ReadsAttribute(attribute="", description="")})
 @WritesAttributes({@WritesAttribute(attribute="", description="")})
 public class NLPProcessor extends AbstractProcessor {
 
-	public static final String ATTRIBUTE_OUTPUT_NAME = "links";
-	
-	public static final String ATTRIBUTE_INPUT_NAME = "url";
+	public static final String ATTRIBUTE_OUTPUT_NAME = "names";
+	public static final String ATTRIBUTE_INPUT_NAME = "sentence";
 	
     public static final PropertyDescriptor MY_PROPERTY = new PropertyDescriptor
             .Builder().name(ATTRIBUTE_INPUT_NAME)
-            .description("URL")
+            .description("sentence")
             .required(true)
             .addValidator(StandardValidators.NON_EMPTY_VALIDATOR)
             .build();
 
     public static final Relationship REL_SUCCESS = new Relationship.Builder()
             .name("success")
-            .description("Successfully extracted Links.")
+            .description("Successfully extracted people.")
             .build();
 
     public static final Relationship REL_FAILURE = new Relationship.Builder()
             .name("failure")
-            .description("Failed to extract links.")
+            .description("Failed to extract people.")
             .build();
     
     private List<PropertyDescriptor> descriptors;
 
     private Set<Relationship> relationships;
 
+    private OpenNLPService service;
+    
     @Override
     protected void init(final ProcessorInitializationContext context) {
         final List<PropertyDescriptor> descriptors = new ArrayList<PropertyDescriptor>();
@@ -121,13 +122,25 @@ public class NLPProcessor extends AbstractProcessor {
         }
         final AtomicReference<String> valueRef = new AtomicReference<>();
          
-        String url = flowFile.getAttribute(ATTRIBUTE_INPUT_NAME);
-        String url2 = context.getProperty(ATTRIBUTE_INPUT_NAME).getValue();
+        String sentence = flowFile.getAttribute(ATTRIBUTE_INPUT_NAME);
+        String sentence2 = context.getProperty(ATTRIBUTE_INPUT_NAME).getValue();
 
-        if ( url == null) {   
-        	url = url2;
-        	getLogger().info("URL Sent:" + url);
+        if ( sentence == null) {   
+        	sentence = sentence2;
+        	getLogger().info("Input Sent:" + sentence);
         }
+        
+        service = new OpenNLPService();   
+
+        String outputJSON = null;
+        
+        try {
+        	//service.
+        }
+        catch(Exception e) {
+        	e.printStackTrace();
+        }
+        
 /*        SoupService soupService = new SoupService();
         List<PrintableLink> value = null;
         String outputJSON = null;
@@ -144,6 +157,7 @@ public class NLPProcessor extends AbstractProcessor {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		*/
 
 		try {
 			//Output Flowfile			
@@ -158,9 +172,8 @@ public class NLPProcessor extends AbstractProcessor {
 			
 			session.transfer(flowFile, REL_SUCCESS);
 		} catch (Exception e) {
-			getLogger().error("Unable to process LinkExtractor file");
+			getLogger().error("Unable to process NLP Processor file");
 			session.transfer(flowFile, REL_FAILURE);
 		}
-*/
     }
 }

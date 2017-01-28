@@ -3,7 +3,7 @@
 // maven pom organized by organization.
 // ------------------------------------------------------------------
 
-nifi-linkextractor-nar
+nifi-nlp-nar
 
 
 From: 'an unknown organization'
@@ -15,7 +15,7 @@ From: 'an unknown organization'
     License: Bouncy Castle Licence  (http://www.bouncycastle.org/licence.html)
 
 From: 'Apache NiFi Project' (http://nifi.apache.org/)
-  - nifi-process-processors (http://nifi.apache.org/nifi-nar-bundles/linkextractor/nifi-process-processors) com.dataflowdeveloper:nifi-process-processors:jar:1.0-SNAPSHOT
+  - nifi-nlp-processors (http://nifi.apache.org/nifi-nar-bundles/nlp-processor/nifi-nlp-processors) com.dataflowdeveloper:nifi-nlp-processors:jar:1.0
     License: Apache License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0)
   - nifi-processor-utils (http://nifi.apache.org/nifi-commons/nifi-processor-utils) org.apache.nifi:nifi-processor-utils:jar:1.0.0
     License: Apache License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0)
@@ -23,10 +23,6 @@ From: 'Apache NiFi Project' (http://nifi.apache.org/)
     License: Apache License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0)
   - nifi-utils (http://nifi.apache.org/nifi-commons/nifi-utils) org.apache.nifi:nifi-utils:jar:1.0.0
     License: Apache License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0)
-
-From: 'Jonathan Hedley' (http://jonathanhedley.com/)
-  - jsoup (http://jsoup.org/) org.jsoup:jsoup:jar:1.8.3
-    License: The MIT License  (http://jsoup.org/license)
 
 From: 'The Apache Software Foundation' (http://www.apache.org/)
   - Apache Commons IO (http://commons.apache.org/proper/commons-io/) commons-io:commons-io:jar:2.5

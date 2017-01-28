@@ -3,7 +3,7 @@
 // maven pom organized by organization.
 // ------------------------------------------------------------------
 
-nifi-process-processors
+nifi-nlp-processors
 
 
 From: 'an unknown organization'
@@ -21,10 +21,6 @@ From: 'Apache NiFi Project' (http://nifi.apache.org/)
     License: Apache License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0)
   - nifi-utils (http://nifi.apache.org/nifi-commons/nifi-utils) org.apache.nifi:nifi-utils:jar:1.0.0
     License: Apache License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0)
-
-From: 'Jonathan Hedley' (http://jonathanhedley.com/)
-  - jsoup (https://jsoup.org/) org.jsoup:jsoup:jar:1.10.1
-    License: The MIT License  (https://jsoup.org/license)
 
 From: 'The Apache Software Foundation' (http://www.apache.org/)
   - Apache Commons IO (http://commons.apache.org/proper/commons-io/) commons-io:commons-io:jar:2.5
