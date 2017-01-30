@@ -16,14 +16,11 @@
  */
 package com.dataflowdeveloper.processors.process;
 
-import java.io.IOException;
-import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import java.util.concurrent.atomic.AtomicReference;
 
 import org.apache.nifi.annotation.behavior.ReadsAttribute;
 import org.apache.nifi.annotation.behavior.ReadsAttributes;
@@ -41,7 +38,6 @@ import org.apache.nifi.processor.ProcessSession;
 import org.apache.nifi.processor.ProcessorInitializationContext;
 import org.apache.nifi.processor.Relationship;
 import org.apache.nifi.processor.exception.ProcessException;
-import org.apache.nifi.processor.io.OutputStreamCallback;
 import org.apache.nifi.processor.util.StandardValidators;
    
 @Tags({"nlpprocessor"})
@@ -52,15 +48,28 @@ import org.apache.nifi.processor.util.StandardValidators;
 public class NLPProcessor extends AbstractProcessor {
 
 	public static final String ATTRIBUTE_OUTPUT_NAME = "names";
+	public static final String ATTRIBUTE_OUTPUT_LOCATION_NAME = "locations";
 	public static final String ATTRIBUTE_INPUT_NAME = "sentence";
+	public static final String PROPERTY_NAME_EXTRA = "Extra Resources";
 	
     public static final PropertyDescriptor MY_PROPERTY = new PropertyDescriptor
             .Builder().name(ATTRIBUTE_INPUT_NAME)
-            .description("sentence")
+            .description("A sentence to parse, such as a Tweet.")
             .required(true)
+            .expressionLanguageSupported(true)
             .addValidator(StandardValidators.NON_EMPTY_VALIDATOR)
             .build();
 
+    public static final PropertyDescriptor EXTRA_RESOURCE = new PropertyDescriptor.Builder()
+    		   .name(PROPERTY_NAME_EXTRA)
+    		   .description("The path to one or more Apache OpenNLP Models to add to the classpath. See http://opennlp.sourceforge.net/models-1.5/")
+    		   .addValidator(StandardValidators.NON_EMPTY_VALIDATOR)
+    		   .expressionLanguageSupported(true)
+    		   .required(true)
+    		   .defaultValue("src/main/resources/META-INF/input")
+    		   .dynamic(true)
+    		   .build();
+    
     public static final Relationship REL_SUCCESS = new Relationship.Builder()
             .name("success")
             .description("Successfully extracted people.")
@@ -70,6 +79,7 @@ public class NLPProcessor extends AbstractProcessor {
             .name("failure")
             .description("Failed to extract people.")
             .build();
+
     
     private List<PropertyDescriptor> descriptors;
 
@@ -81,6 +91,7 @@ public class NLPProcessor extends AbstractProcessor {
     protected void init(final ProcessorInitializationContext context) {
         final List<PropertyDescriptor> descriptors = new ArrayList<PropertyDescriptor>();
         descriptors.add(MY_PROPERTY);
+        descriptors.add(EXTRA_RESOURCE);
         this.descriptors = Collections.unmodifiableList(descriptors);
 
         final Set<Relationship> relationships = new HashSet<Relationship>();
@@ -109,46 +120,44 @@ public class NLPProcessor extends AbstractProcessor {
         FlowFile flowFile = session.get();
         if ( flowFile == null ) {
         	flowFile = session.create();
-        }
-        final AtomicReference<String> valueRef = new AtomicReference<>();
-         
-        String sentence = flowFile.getAttribute(ATTRIBUTE_INPUT_NAME);
-        String sentence2 = context.getProperty(ATTRIBUTE_INPUT_NAME).getValue();
+        }               
+		try {			
+				flowFile.getAttributes();
+						
+	            service = new OpenNLPService();   
 
-        if ( sentence == null) {   
-        	sentence = sentence2;
-        	//getLogger().info("Input Sent:" + sentence);
-        }
-        
-        service = new OpenNLPService();   
+	            String sentence = flowFile.getAttribute(ATTRIBUTE_INPUT_NAME);
+	            String sentence2 = context.getProperty(ATTRIBUTE_INPUT_NAME).evaluateAttributeExpressions(flowFile).getValue();
+	            
+	            if ( sentence == null) {   
+	            	sentence = sentence2;
+	            }
+	            if ( sentence == null) {
+	            	return;
+	            }
+	       	
+	        	String value = service.getPeople(context.getProperty(EXTRA_RESOURCE).evaluateAttributeExpressions(flowFile).getValue(), sentence);
+	        	
+	        	if ( value == null) { 
+	        		return;
+	        	}
 
-        String value = null;
-        
-        try {
-        	value = service.getPeople(sentence);
-        	
-        	if ( value == null) { 
-        		return;
-        	}
-
-			valueRef.set(value);        	
-        }
-        catch(Exception e) {
-        	e.printStackTrace();
-        }
-        
-		try {
-			flowFile = session.write(flowFile, new OutputStreamCallback() {
-				@Override
-				public void process(OutputStream out) throws IOException {
-					out.write(valueRef.get().getBytes());
+				flowFile = session.putAttribute(flowFile, "mime.type", "application/json");
+				flowFile = session.putAttribute(flowFile, ATTRIBUTE_OUTPUT_NAME, value);
+				
+				try {
+					String locations = service.getLocations(context.getProperty(EXTRA_RESOURCE).evaluateAttributeExpressions(flowFile).getValue(), sentence);
+					flowFile = session.putAttribute(flowFile, ATTRIBUTE_OUTPUT_LOCATION_NAME, locations);
+				} catch (Exception e) {
+					e.printStackTrace();
 				}
-		    });
-			
+
 			session.transfer(flowFile, REL_SUCCESS);
-		} catch (Exception e) {
-			getLogger().error("Unable to process NLP Processor file");
-			session.transfer(flowFile, REL_FAILURE);
+			session.commit();
+		   } catch (final Throwable t) {
+			   getLogger().error("Unable to process NLP Processor file " + t.getLocalizedMessage()) ;
+			   getLogger().error("{} failed to process due to {}; rolling back session", new Object[]{this, t});
+	            throw t;
 		}
     }
 }

@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: com.dataflowdeveloper.processors.process.NLPProcessorTest
--------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.995 sec - in com.dataflowdeveloper.processors.process.NLPProcessorTest
