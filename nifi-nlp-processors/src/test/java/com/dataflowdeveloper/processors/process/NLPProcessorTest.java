@@ -66,7 +66,7 @@ public class NLPProcessorTest {
 	public void testProcessor() {
 		
 		testRunner.setProperty(MY_PROPERTY, "Tim Spann wrote some code to test NLP with Susan Smith and Doug Jones in New York City, NY and in London, UK.");
-		testRunner.setProperty(EXTRA_RESOURCE, "/Volumes/Transcend/projects/nifi-nlp-processor/input");
+		testRunner.setProperty(EXTRA_RESOURCE, "/Volumes/seagate/apps/apache/nifi/nifi-assembly/target/nifi-1.5.0-SNAPSHOT-bin/nifi-1.5.0-SNAPSHOT/lib"); // "/Volumes/Transcend/projects/nifi-nlp-processor/input");
 		
 		try {
 			testRunner.enqueue(new FileInputStream(new File("src/test/resources/test.csv")));
