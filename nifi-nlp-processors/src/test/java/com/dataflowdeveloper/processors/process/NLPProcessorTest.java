@@ -16,13 +16,11 @@
  */
 package com.dataflowdeveloper.processors.process;
 
-import static org.junit.Assert.assertNotNull;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.UnsupportedEncodingException;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.nifi.components.PropertyDescriptor;
 import org.apache.nifi.processor.util.StandardValidators;
@@ -41,7 +39,7 @@ public class NLPProcessorTest {
 	
     public static final PropertyDescriptor MY_PROPERTY = new PropertyDescriptor
             .Builder().name(ATTRIBUTE_INPUT_NAME)
-            .description("A sentence to parse, such as a Tweet.")
+            .description("A sentence to parse, such as a Tweet on 12/21/2018.")
             .required(true)
             .expressionLanguageSupported(true)
             .addValidator(StandardValidators.NON_EMPTY_VALIDATOR)
@@ -65,8 +63,8 @@ public class NLPProcessorTest {
 	@Test
 	public void testProcessor() {
 		
-		testRunner.setProperty(MY_PROPERTY, "Tim Spann wrote some code to test NLP with Susan Smith and Doug Jones in New York City, NY and in London, UK.");
-		testRunner.setProperty(EXTRA_RESOURCE, "/Volumes/seagate/apps/apache/nifi/nifi-assembly/target/nifi-1.5.0-SNAPSHOT-bin/nifi-1.5.0-SNAPSHOT/lib"); // "/Volumes/Transcend/projects/nifi-nlp-processor/input");
+		testRunner.setProperty(MY_PROPERTY, "Tim Spann wrote some code to test NLP with Susan Smith and Doug Jones in New York City, NY and in London, UK on Jan 5, 2018.");
+		testRunner.setProperty(EXTRA_RESOURCE, "/Volumes/seagate/models"); 
 		
 		try {
 			testRunner.enqueue(new FileInputStream(new File("src/test/resources/test.csv")));
@@ -81,14 +79,47 @@ public class NLPProcessorTest {
 
 		for (MockFlowFile mockFile : successFiles) {
 			try {
-				System.out.println("FILE:" + new String(mockFile.toByteArray(), "UTF-8"));
-				System.out.println("Attribute: " + mockFile.getAttribute(NLPProcessor.ATTRIBUTE_OUTPUT_NAME));
-				System.out.println("Attribute 2: " + mockFile.getAttribute(NLPProcessor.ATTRIBUTE_OUTPUT_LOCATION_NAME));
+				Map<String, String> attributes =  mockFile.getAttributes();
 				
-				assertNotNull(  mockFile.getAttribute(NLPProcessor.ATTRIBUTE_OUTPUT_NAME) );
-			} catch (UnsupportedEncodingException e) {
+				 for (String attribute : attributes.keySet()) {				 
+					 System.out.println("Attribute:" + attribute + " = " + mockFile.getAttribute(attribute));
+				 }
+				
+			} catch (Throwable e) {
 				e.printStackTrace();
 			}
 		}
 	}
+	
+	
+	@Test
+	public void testProcessorRealTweet() {
+		
+		testRunner.setProperty(MY_PROPERTY, "RT @mclynd: Elon Musk and Bill Gates talk about #ArtificialIntelligence future possibilities https://t.co/0iIT4uepdw #DataScience #DataScie… Tuesday April 5, 2017 in New York.");
+		testRunner.setProperty(EXTRA_RESOURCE, "/Volumes/seagate/models"); 
+		
+		try {
+			testRunner.enqueue(new FileInputStream(new File("src/test/resources/test.csv")));
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+
+		testRunner.setValidateExpressionUsage(false);
+		testRunner.run();
+		testRunner.assertValid();
+		List<MockFlowFile> successFiles = testRunner.getFlowFilesForRelationship(NLPProcessor.REL_SUCCESS);
+
+		for (MockFlowFile mockFile : successFiles) {
+			try {
+				Map<String, String> attributes =  mockFile.getAttributes();
+				
+				 for (String attribute : attributes.keySet()) {				 
+					 System.out.println("Attribute:" + attribute + " = " + mockFile.getAttribute(attribute));
+				 }
+			} catch (Throwable e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
 }
