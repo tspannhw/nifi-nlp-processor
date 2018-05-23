@@ -49,12 +49,13 @@ import org.apache.nifi.processor.util.StandardValidators;
 @CapabilityDescription("Run OpenNLP Natural Language Processing for Name, Location, Date Finder")
 @SeeAlso({})
 @ReadsAttributes({ @ReadsAttribute(attribute = "sentence", description = "sentence") })
-@WritesAttributes({ @WritesAttribute(attribute = "nlp_name, nlp_location, nlp_date", description = "nlp names, locations, dates") })
+@WritesAttributes({
+		@WritesAttribute(attribute = "nlp_name, nlp_location, nlp_date", description = "nlp names, locations, dates") })
 public class NLPProcessor extends AbstractProcessor {
 
-//	public static final String ATTRIBUTE_OUTPUT_NAME = "names";
-//	public static final String ATTRIBUTE_OUTPUT_LOCATION_NAME = "locations";
-//	public static final String ATTRIBUTE_OUTPUT_DATE_NAME = "dates";
+	// public static final String ATTRIBUTE_OUTPUT_NAME = "names";
+	// public static final String ATTRIBUTE_OUTPUT_LOCATION_NAME = "locations";
+	// public static final String ATTRIBUTE_OUTPUT_DATE_NAME = "dates";
 	public static final String ATTRIBUTE_INPUT_NAME = "sentence";
 	public static final String PROPERTY_NAME_EXTRA = "Extra Resources";
 
@@ -126,51 +127,55 @@ public class NLPProcessor extends AbstractProcessor {
 			if (sentence == null) {
 				sentence = sentence2;
 			}
-			
+
 			try {
-				final AtomicReference<String> contentsRef = new AtomicReference<>(null);
-				
-				session.read(flowFile, new InputStreamCallback() {
-					@Override
-					public void process(final InputStream input) throws IOException {
-				        final String contents = IOUtils.toString(input, "UTF-8");
-				        contentsRef.set(contents);
+				// if they pass in a sentence do that instead of flowfile
+				if (sentence == null) {
+					final AtomicReference<String> contentsRef = new AtomicReference<>(null);
+
+					session.read(flowFile, new InputStreamCallback() {
+						@Override
+						public void process(final InputStream input) throws IOException {
+							final String contents = IOUtils.toString(input, "UTF-8");
+							contentsRef.set(contents);
+						}
+					});
+
+					// use this as our text
+					if (contentsRef.get() != null) {
+						sentence = contentsRef.get();
 					}
-				});
-				
-				// use this as our text
-				if ( contentsRef.get() != null ) {
-					sentence = contentsRef.get();
 				}
-				
+
 				List<PersonName> people = service.getPeople(
-						context.getProperty(EXTRA_RESOURCE).evaluateAttributeExpressions(flowFile).getValue(), sentence);
+						context.getProperty(EXTRA_RESOURCE).evaluateAttributeExpressions(flowFile).getValue(),
+						sentence);
 
 				int count = 1;
 				for (PersonName personName : people) {
 					flowFile = session.putAttribute(flowFile, "nlp_name_" + count, personName.getName());
 					count++;
 				}
-				
-				List<String> dates= service.getDates(
-						context.getProperty(EXTRA_RESOURCE).evaluateAttributeExpressions(flowFile).getValue(), sentence);
 
-				
+				List<String> dates = service.getDates(
+						context.getProperty(EXTRA_RESOURCE).evaluateAttributeExpressions(flowFile).getValue(),
+						sentence);
+
 				count = 1;
 				for (String aDate : dates) {
 					flowFile = session.putAttribute(flowFile, "nlp_date_" + count, aDate);
-					count++;					
+					count++;
 				}
-				
+
 				List<Location> locations = service.getLocations(
-						context.getProperty(EXTRA_RESOURCE).evaluateAttributeExpressions(flowFile).getValue(), sentence);
+						context.getProperty(EXTRA_RESOURCE).evaluateAttributeExpressions(flowFile).getValue(),
+						sentence);
 
 				count = 1;
 				for (Location location : locations) {
 					flowFile = session.putAttribute(flowFile, "nlp_location_" + count, location.getLocation());
-					count++;						
+					count++;
 				}
-
 
 			} catch (Exception e) {
 				throw new ProcessException(e);
