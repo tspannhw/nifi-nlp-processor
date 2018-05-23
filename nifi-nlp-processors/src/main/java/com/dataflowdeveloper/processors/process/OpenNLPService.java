@@ -10,8 +10,6 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.google.gson.Gson;
-
 import opennlp.tools.namefind.NameFinderME;
 import opennlp.tools.namefind.TokenNameFinderModel;
 import opennlp.tools.tokenize.Tokenizer;
@@ -28,7 +26,6 @@ public class OpenNLPService {
 	
 	// Public Vars
 	public static final String CURRENT_DIR = "src/main/resources/META-INF/input";
-	// getClass().getResourceAsStream(); // System.getProperty("user.dir");
 	public static final String CURRENT_FILE =  "/en-ner-person.bin"; //CURRENT_DIR + "/input/en-ner-person.bin";
 	public static final String CURRENT_TOKEN_FILE =  "/en-token.bin"; //CURRENT_DIR + "/input/en-token.bin";
 	public static final String CURRENT_LOCATION_FILE = "/en-ner-location.bin";

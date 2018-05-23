@@ -67,7 +67,7 @@ public class NLPProcessorTest {
 		testRunner.setProperty(EXTRA_RESOURCE, "/Volumes/seagate/models"); 
 		
 		try {
-			testRunner.enqueue(new FileInputStream(new File("src/test/resources/test.csv")));
+			testRunner.enqueue(new FileInputStream(new File("src/test/resources/large.txt")));
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
@@ -114,7 +114,7 @@ public class NLPProcessorTest {
 				Map<String, String> attributes =  mockFile.getAttributes();
 				
 				 for (String attribute : attributes.keySet()) {				 
-					 System.out.println("Attribute:" + attribute + " = " + mockFile.getAttribute(attribute));
+					 System.out.println("Sentence Tweet Attribute:" + attribute + " = " + mockFile.getAttribute(attribute));
 				 }
 			} catch (Throwable e) {
 				e.printStackTrace();

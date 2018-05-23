@@ -16,12 +16,16 @@
  */
 package com.dataflowdeveloper.processors.process;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.atomic.AtomicReference;
 
+import org.apache.commons.io.IOUtils;
 import org.apache.nifi.annotation.behavior.ReadsAttribute;
 import org.apache.nifi.annotation.behavior.ReadsAttributes;
 import org.apache.nifi.annotation.behavior.WritesAttribute;
@@ -38,13 +42,14 @@ import org.apache.nifi.processor.ProcessSession;
 import org.apache.nifi.processor.ProcessorInitializationContext;
 import org.apache.nifi.processor.Relationship;
 import org.apache.nifi.processor.exception.ProcessException;
+import org.apache.nifi.processor.io.InputStreamCallback;
 import org.apache.nifi.processor.util.StandardValidators;
 
-@Tags({ "nlpprocessor" })
-@CapabilityDescription("Run OpenNLP Name Finder")
+@Tags({ "nlpprocessor, apache opennlp, nlp, natural language processing" })
+@CapabilityDescription("Run OpenNLP Natural Language Processing for Name, Location, Date Finder")
 @SeeAlso({})
-@ReadsAttributes({ @ReadsAttribute(attribute = "", description = "") })
-@WritesAttributes({ @WritesAttribute(attribute = "", description = "") })
+@ReadsAttributes({ @ReadsAttribute(attribute = "sentence", description = "sentence") })
+@WritesAttributes({ @WritesAttribute(attribute = "nlp_name, nlp_location, nlp_date", description = "nlp names, locations, dates") })
 public class NLPProcessor extends AbstractProcessor {
 
 //	public static final String ATTRIBUTE_OUTPUT_NAME = "names";
@@ -121,11 +126,23 @@ public class NLPProcessor extends AbstractProcessor {
 			if (sentence == null) {
 				sentence = sentence2;
 			}
-			if (sentence == null) {
-				return;
-			}
 			
 			try {
+				final AtomicReference<String> contentsRef = new AtomicReference<>(null);
+				
+				session.read(flowFile, new InputStreamCallback() {
+					@Override
+					public void process(final InputStream input) throws IOException {
+				        final String contents = IOUtils.toString(input, "UTF-8");
+				        contentsRef.set(contents);
+					}
+				});
+				
+				// use this as our text
+				if ( contentsRef.get() != null ) {
+					sentence = contentsRef.get();
+				}
+				
 				List<PersonName> people = service.getPeople(
 						context.getProperty(EXTRA_RESOURCE).evaluateAttributeExpressions(flowFile).getValue(), sentence);
 
@@ -153,11 +170,10 @@ public class NLPProcessor extends AbstractProcessor {
 					flowFile = session.putAttribute(flowFile, "nlp_location_" + count, location.getLocation());
 					count++;						
 				}
-				
-				flowFile = session.putAttribute(flowFile, "mime.type", "application/json");
+
 
 			} catch (Exception e) {
-				e.printStackTrace();
+				throw new ProcessException(e);
 			}
 
 			session.transfer(flowFile, REL_SUCCESS);

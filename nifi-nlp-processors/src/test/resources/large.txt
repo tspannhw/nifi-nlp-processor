@@ -1,0 +1,506 @@
+2017 in Review
+
+First off, this was an amazing year for Big Data, IoT, Streaming, Machine Learning and Deep Learning. So many cool events, updates, new products, new projects, new libraries and community growth. I've seen a lot of people adopt and grow Big Data and streaming projects from nothing. Using the power of Open Source and the tools made available by Apache, companies are growing with the help of trusted partners and a community of engineers and users.
+
+We had three awesome DataWorksSummit (Formerly Hadoop Summit, but now a lot more things from IoT, AI and Streaming).
+
+I attended Munich and spoke at Sydney. I missed California, but all the videos and slides were online and I loved those.
+
+I spoke at Oracle Code in NYC which was a fun little event. I was surprised to learn that many people never heard of Apache NiFi or how easily you could use it to build real-time dataflows including Deep Learning and Big Data.
+
+I got to talk to a lot of interesting people while working the Hortonworks Booth at Strata NYC. Such a huge event, fidget spinners and streaming were the main talk away there.
+
+We had a lot of awesome meetups in Princeton and in the NYC and Philadelphia areas. The Princeton Future of Data Group grew to over 750 members! A great community of data scientists, engineers, students, analysts, techies and business thought leaders. I am really proud to be apart of this amazing group.
+
+
+
+Meetups
+
+I got to speak at most of the meetups except when we had special guests. I had some great NY/NJ/Philly team mates co-running the meetup: @milind pandit @Greg Keys. Greg and I also created a North Jersey meetup.
+
+November 14th - Enterprise Data at Scale
+
+I spoke on IBM DSX, Apache NiFi, Apache Spark, Python, Jupyter and Data Science. We had two excellent IBM resources assisting me fortunately.
+
+October 5th - Deep Learning with DeepLearning4J (DL4J). A great talk by my friend from SkyMind. It's nice to see their project get accepted to Eclipse.
+
+August 8th - Deep Dive into HDF 3.0 @ Honeywell
+
+June 20th - Latest Innovation -Schema Registry and More. @TRAC Intermodal
+
+May 16th - Hadoop Tools Overview
+
+March 28th - Apache NiFi: Ingesting Enterprise Data at Scale
+
+
+
+Libraries, SDKs, Tools, Frameworks
+
+TensorFlow
+Apache MXNet
+NLTK
+Apache OpenNLP
+Apache Tika
+Apache NiFi Custom Processors
+OpenCV
+Apache NiFi 1.4
+Apache Zeppelin
+IBM DSX
+Apache Spark 2.x
+Apache Hive LLAP
+Apache HBase with Apache Phoenix
+Apache ORC
+Apache Hadoop
+Hortonworks Schema Registry
+Hortonworks Streaming Analytics Manager
+Druid
+Apache SuperSet - Now in Apache
+PyTorch
+Apache Storm - Big Updates
+Devices
+
+Raspberry Pi Zero Wireless
+Raspberry Pi 3B+
+Movidius
+Nvidia Jetson TX1
+Matrix Creator
+Google AIY Voice Kit
+Kudrone
+Christmas Tree Hat
+Sense Hat
+Many Cameras and Video Cameras
+NanoPi Duo
+Tinkerboard
+There were a lot of big news this year, https://hortonworks.com/blog/top-hortonworks-blogs-2017/. Apache Hive LLAP became a real production thing and brought Apache Hadoop into the world of EDW completely Open Source. On the Apache Spark front, we past verison 2.0 and Livy became a production standby and became Apache Livy. The JanusGraph database appeared and is quickly becoming the standard for Graphs. Apache Calcite went into so many projects that SQL queries are everywhere including in Apache NiFi. A huge number of interesting software projects arrised including Hortonworks Data Plane, Hortonworks Schema Registry and Hortonworks Streaming Analytics Manager. This was an awesome year for software.
+
+
+
+
+
+Presentations From Talks Available
+
+https://www.slideshare.net/bunkertor/enterprise-data-science-at-scale-princeton-nj-14nov2017
+https://www.slideshare.net/bunkertor/realtime-ingesting-and-transforming-sensor-data-social-data-w-nifi-tensorflow
+https://www.slideshare.net/bunkertor/introduction-to-hdf-30
+https://www.slideshare.net/bunkertor/introduction-to-hadoop-76031567
+https://www.slideshare.net/bunkertor/apache-nifi-ingesting-enterprise-data-at-scale
+https://www.slideshare.net/bunkertor/ingesting-drone-data-into-big-data-platforms
+My HCC Articles of 2017
+
+https://community.hortonworks.com/articles/80412/working-with-airbnbs-superset.html
+https://community.hortonworks.com/articles/116803/building-a-custom-processor-in-apache-nifi-12-for.html
+https://community.hortonworks.com/articles/79842/ingesting-osquery-into-apache-phoenix-using-apache.html
+https://community.hortonworks.com/articles/97062/query-hive-using-python.html
+https://community.hortonworks.com/articles/79008/using-the-hadoop-attack-library-to-check-your-hado.html
+https://community.hortonworks.com/articles/81222/adding-stanford-corenlp-to-big-data-pipelines-apac.html
+https://community.hortonworks.com/articles/81270/adding-stanford-corenlp-to-big-data-pipelines-apac-1.html
+https://community.hortonworks.com/articles/88404/adding-and-using-hplsql-and-hivemall-with-hive-mac.html
+https://community.hortonworks.com/articles/149891/handling-hl7-records-and-storing-in-apache-hive-fo.html
+https://community.hortonworks.com/articles/87632/ingesting-sql-server-tables-into-hive-via-apache-n.html
+https://community.hortonworks.com/articles/73828/submitting-spark-jobs-from-apache-nifi-using-livy.html
+https://community.hortonworks.com/articles/76240/using-opennlp-for-identifying-names-from-text.html
+https://community.hortonworks.com/articles/136024/integrating-nvidia-jetson-tx1-running-tensorrt-int.html
+https://community.hortonworks.com/articles/136026/integrating-nvidia-jetson-tx1-running-tensorrt-int-1.html
+https://community.hortonworks.com/articles/136028/integrating-nvidia-jetson-tx1-running-tensorrt-int-2.html
+https://community.hortonworks.com/articles/136039/integrating-nvidia-jetson-tx1-running-tensorrt-int-3.html
+https://community.hortonworks.com/articles/150026/hl7-processing-part-3-apache-zeppelin-sql-bi-and-a.html
+https://community.hortonworks.com/articles/104226/simple-backups-of-hadoop-with-apache-nifi-12.html
+https://community.hortonworks.com/articles/77609/securing-your-clusters-in-the-public-cloud.html
+https://community.hortonworks.com/articles/92495/monitor-apache-nifi-with-apache-nifi.html
+https://community.hortonworks.com/articles/77621/creating-an-email-bot-in-apache-nifi.html
+https://community.hortonworks.com/articles/80418/open-nlp-example-apache-nifi-processor.html
+https://community.hortonworks.com/articles/76924/data-processing-pipeline-parsing-pdfs-and-identify.html
+https://community.hortonworks.com/articles/86801/working-with-s3-compatible-data-stores-via-apache.html
+https://community.hortonworks.com/articles/101904/part-2-iot-augmenting-gps-data-with-weather.html
+https://community.hortonworks.com/articles/118148/creating-wordclouds-from-dataflows-with-apache-nif.html
+https://community.hortonworks.com/articles/121916/controlling-big-data-flows-with-gestures-minifi-ni.html
+https://community.hortonworks.com/articles/76935/using-sentiment-analysis-and-nlp-tools-with-hdp-25.html
+https://community.hortonworks.com/articles/87397/steganography-with-apache-nifi-1.html
+https://community.hortonworks.com/articles/83100/deep-learning-iot-workflows-with-raspberry-pi-mqtt.html
+https://community.hortonworks.com/articles/154957/converting-json-to-sql-ddl.html
+https://community.hortonworks.com/articles/81694/extracttext-nifi-custom-processor-powered-by-apach.html
+https://community.hortonworks.com/articles/92345/store-a-flow-to-disk-and-then-reserialize-it-to-co.html
+https://community.hortonworks.com/articles/92496/qadcdc-our-how-to-ingest-some-database-tables-to-h.html
+https://community.hortonworks.com/articles/73811/trigger-sonicpi-music-via-apache-nifi.html
+https://community.hortonworks.com/articles/99861/ingesting-ibeacon-data-via-ble-to-mqtt-wifi-gatewa.html
+https://community.hortonworks.com/articles/101679/iot-ingesting-gps-data-from-raspberry-pi-zero-wire.html
+https://community.hortonworks.com/articles/104255/ingesting-and-testing-jms-data-with-nifi.html
+https://community.hortonworks.com/articles/89455/ingesting-gps-data-from-onion-omega2-devices-with.html
+https://community.hortonworks.com/articles/89547/tracking-phone-location-for-android-and-iot-with-o.html
+https://community.hortonworks.com/articles/107379/minifi-for-image-capture-and-ingestion-from-raspbe.html
+https://community.hortonworks.com/articles/108947/minifi-for-ble-bluetooth-low-energy-beacon-data-in.html
+https://community.hortonworks.com/articles/108966/minifi-for-sensor-data-ingest-from-devices.html
+https://community.hortonworks.com/articles/110469/simple-backup-and-restore-of-hdfs-data-via-hdf-30.html
+https://community.hortonworks.com/articles/110475/ingesting-sensor-data-from-raspberry-pis-running-r.html
+https://community.hortonworks.com/articles/118132/minifi-capturing-converting-tensorflow-inception-t.html
+https://community.hortonworks.com/articles/122077/ingesting-csv-data-and-pushing-it-as-avro-to-kafka.html
+https://community.hortonworks.com/articles/130814/sensors-and-image-capture-and-deep-learning-analys.html
+https://community.hortonworks.com/articles/86570/hosting-and-ingesting-data-from-web-pages-desktop.html
+https://community.hortonworks.com/articles/142686/real-time-ingesting-and-transforming-sensor-and-so.html
+https://community.hortonworks.com/articles/77988/ingest-remote-camera-images-from-raspberry-pi-via.html
+https://community.hortonworks.com/articles/108718/ingesting-rdbms-data-as-new-tables-arrive-automagi.html
+https://community.hortonworks.com/articles/149982/hl7-ingest-part-4-streaming-analytics-manager-and.html
+https://community.hortonworks.com/articles/149910/handling-hl7-records-part-1-hl7-ingest.html
+https://community.hortonworks.com/articles/80339/iot-capturing-photos-and-analyzing-the-image-with.html
+https://community.hortonworks.com/articles/77403/basic-image-processing-and-linux-utilities-as-part.html
+https://community.hortonworks.com/articles/103863/using-an-asus-tinkerboard-with-tensorflow-and-pyth.html
+https://community.hortonworks.com/articles/146704/edge-analytics-with-nvidia-jetson-tx1-running-apac.html
+https://community.hortonworks.com/articles/148730/integrating-apache-spark-2x-jobs-with-apache-nifi.html
+https://community.hortonworks.com/articles/154760/generating-avro-schemas-and-ensuring-field-names-m.html
+https://community.hortonworks.com/articles/155326/monitoring-energy-usage-utilizing-apache-nifi-pyth.html
+My Articles on DZone
+
+https://dzone.com/articles/generating-avro-schemas-and-ensuring-field-names-m
+https://dzone.com/articles/favorite-tech-of-the-year-early-edition
+https://dzone.com/articles/integrating-apache-spark-2x-jobs-with-apache-nifi
+https://dzone.com/articles/using-jolt-in-big-data-streams-to-remove-nulls
+https://dzone.com/articles/processing-hl7-records
+https://dzone.com/articles/big-data-is-growing
+https://dzone.com/articles/ingesting-rdbms-data-as-new-tables-arrive-automagi
+https://dzone.com/articles/using-websockets-with-apache-nifi
+https://dzone.com/articles/using-the-new-flick-hat-for-raspberry-pi
+https://dzone.com/articles/real-time-ingest-and-ai
+https://dzone.com/articles/tensorflow-for-real-world-applications
+https://dzone.com/articles/integrating-nvidia-jetson-tx1-running-tensorrt-int
+https://dzone.com/articles/real-time-tensorflow-camera-analysis-with-sensors
+https://dzone.com/articles/tensorflow-and-nifi-big-data-ai-sandwich
+https://dzone.com/articles/minifi-capturing-converting-tensorflow-inception-t
+https://dzone.com/articles/creating-wordclouds-from-dataflows-with-apache-nif
+https://dzone.com/articles/building-a-custom-processor-in-apache-nifi-12-for
+https://dzone.com/articles/data-engineer-as-dj
+https://dzone.com/articles/how-to-automatically-migrate-all-tables-from-a-dat
+https://dzone.com/articles/dataworks-summit-2017-sj-updates
+https://dzone.com/articles/hdf-30-for-utilities
+https://dzone.com/articles/hdp-26-what-why-how-and-now
+https://dzone.com/articles/using-apache-minifi-on-edge-devices-part-1
+https://dzone.com/articles/creating-an-email-bot-in-apache-nifi
+https://dzone.com/articles/this-week-in-hadoop-and-more-deep-deep-learning-an
+https://dzone.com/articles/using-python-for-big-data-workloads-part-2
+https://dzone.com/articles/using-tinkerboard-with-tensorflow-and-python
+https://dzone.com/articles/using-python-for-big-data-workloads-part-1
+https://dzone.com/articles/part-2-iot-augmenting-gps-data-with-weather
+https://dzone.com/articles/this-week-in-hadoop-and-more-apache-calcite-kylin
+https://dzone.com/articles/iot-ingesting-gps-data-from-raspberry-pi-zero-wire
+https://dzone.com/articles/a-new-era-of-open-source-streaming
+https://dzone.com/articles/day-1-dataworks-summit-munich-report
+https://dzone.com/articles/this-week-in-hadoop-and-more-dl-conferences-course
+https://dzone.com/articles/advanced-apache-nifi-flow-techniques
+https://dzone.com/articles/a-big-data-reference-architecture-for-iot
+https://dzone.com/articles/ingesting-gps-data-from-onion-omega2-devices-with-apache-nifi
+https://dzone.com/articles/sentiment-shoot-out
+https://dzone.com/articles/best-of-dataworks-summit-2017-munich
+https://dzone.com/articles/deep-learning-on-big-data-platforms
+https://dzone.com/articles/tensorflow-on-the-edge-part-2-of-5
+https://dzone.com/articles/this-week-in-hadoop-and-more-nifi-drones-dataworks
+https://dzone.com/articles/oracle-code-new-york-report
+https://dzone.com/articles/deep-learning-for-data-engineers-part-1
+https://dzone.com/articles/this-week-in-hadoop-and-more-keras-deep-learning-a
+https://dzone.com/articles/happy-pi-day-2017
+https://dzone.com/articles/deep-learning-and-machine-learning-guide-part-iii
+https://dzone.com/articles/this-week-in-hadoop-and-more-deep-and-machine-lear
+https://dzone.com/articles/backup-restore-dr
+https://dzone.com/articles/big-data-performance-part-1
+https://dzone.com/articles/nifi-spark-hbase-kafka-machine-learning-and-deep-l
+https://dzone.com/articles/hadoop-101-hbase-client-access
+https://dzone.com/articles/deep-learning-and-machine-learning-guide-part-ii
+https://dzone.com/articles/this-week-in-hadoop-and-more-cloud-visualization-d
+https://dzone.com/articles/big-data-ml-dl-command-line-tools
+https://dzone.com/articles/machine-learning-resources
+https://dzone.com/articles/tensorflow-on-the-edge
+https://dzone.com/articles/deep-learning-and-machine-learning-killer-tools-li
+https://dzone.com/articles/cool-projects-big-data-machine-learning-apache-nifi
+https://dzone.com/articles/protect-your-cloud-big-data-assets
+https://dzone.com/articles/edge-testing-your-hadoop-environment
+https://dzone.com/articles/this-week-in-hadoop-and-more-6
+https://dzone.com/articles/picamera-ingest-real-time
+https://dzone.com/articles/this-week-in-hadoop-and-more-nlp-and-dl
+https://dzone.com/articles/quick-tips-apache-phoenixhbase
+https://dzone.com/articles/the-physics-of-big-data
+My RefCard
+
+https://dzone.com/refcardz/introduction-to-tensorflow
+My Guide
+
+https://dzone.com/guides/artificial-intelligence-machine-learning-and-predi
+
+
+My Github Source Code
+
+I have some example Apache NiFi custom processors developed in JDK 8 including ones for TensorFlow, OpenNLP, DL4J, Apache Tika, Stanford CoreNLP and more. I also published all the Python scripts, documentation, Shell scripts, SQL, Apache NiFi Templates and Apache Zeppelin notebooks as Apache licensed open source on Github.
+
+https://github.com/tspannhw/nifi-tensorflow-processor
+https://github.com/tspannhw/nifi-nlp-processor
+https://github.com/tspannhw/nifi-attributecleaner-processor
+https://github.com/tspannhw/apachelivy-nifi-spark2-integration
+https://github.com/tspannhw/nvidiajetsontx1-mxnet
+https://github.com/tspannhw/nifi-dl4j-processor https://github.com/tspannhw/dws2017sydney
+https://github.com/tspannhw/rpi-flickhat-minifi
+https://github.com/tspannhw/rpi-rainbowhat
+https://github.com/tspannhw/rpi-sensehat-minifi-python
+https://github.com/tspannhw/rpizw-nifi-mqtt-gps
+https://github.com/tspannhw/EnterpriseNIFI
+https://github.com/tspannhw/IngestingDroneData
+https://github.com/tspannhw/spy
+https://github.com/tspannhw/webdataingest
+https://github.com/tspannhw/mxnet_rpi
+https://github.com/tspannhw/nifi-extracttext-processor
+https://github.com/tspannhw/nifi-corenlp-processor
+https://github.com/tspannhw/nlp-utilities
+https://github.com/tspannhw/rpi-sensehat-mqtt-nifi
+https://github.com/tspannhw/rpi-picamera-mqtt-nifi
+https://github.com/tspannhw/iot-scripts
+https://github.com/tspannhw/phoenix
+https://github.com/tspannhw/hive
+
+
+Next year will be amazing, more libraries, more use cases for Deep Learning, enhancements to all the great projects and tools out there. Another Google AIY Kit, more DataWorks Summits, Hadoop 3, HDF 4, HDP 3, so many things to look forward to.
+
+See you at meetups, summits and online next year.
+
+
+In the Holidays, it's nice to know how much energy you are using. So one small step is I bought a low-end inexpensive TPLink Energy Monitoring plug for one device. I have been monitoring phone charging and my Apple monitor.
+
+Let's read the data and do some queries in Apache Hive and Apache Spark 2 SQL.
+
+Processing Live Energy Feeds in The Cloud
+
+
+
+Monitor Energy From a Local OSX
+
+
+
+If your local instance does not have access to Apache Hive, you will need to send the data via Site-to-Site to a Remote Apache NiFi / HDF server/cluster that can.
+
+
+
+
+
+
+
+For Apache Hive Usage, Please Convert to Apache ORC Files
+
+
+
+To Create Your New Table, Grab the hive.ddl
+
+
+
+Inside of Apache Zeppelin, we can create our table based on the above DDL. We could have also let Apache NiFi create the table for us. I like to keep my DDL with my notebook. Just a personal choice.
+
+
+
+We can then query our table in Apache Zeppelin utilizing Apache Spark 2 SQL and Apache Hive QL.
+
+
+
+
+
+Overview
+
+
+
+Step 1: Purchase an inexpensive energy monitoring plug
+
+Step 2: Connect it to a Phone App via WIFI
+
+Step 3: Once Configured, you can now access via Python
+
+Step 4: Install the HS100 Python Library in Python 3.x
+
+Step 5: Fork My Github and Use My Shell Script and Python Script
+
+Step 6: Add the Local Apache NiFi Flow which will call that Script
+
+Step 7: Add a Remote Apache NiFi Flow for Processing into Apache Hadoop
+
+Step 8: Create Your Table
+
+Step 9: Query with Apache Hive and Apache Spark SQL via Apache Zeppelin or Other UI
+
+Step 10: Turn that extra stuff off and save money!
+
+
+
+The Open Source Code and Artefacts
+
+Shell Script (smartreader.sh)
+
+python3 meterreader.py
+
+
+Python Code (meterreader.py)
+
+from pyHS100 import SmartPlug, SmartBulb
+#from pprint import pformat as pf
+import json
+import datetime
+plug = SmartPlug("192.168.1.200")
+row = { }
+emeterdaily = plug.get_emeter_daily(year=2017, month=12)
+for k, v in emeterdaily.items():
+     row["hour%s" % k] = v
+hwinfo = plug.hw_info
+for k, v in hwinfo.items():
+     row["%s" % k] = v
+sysinfo = plug.get_sysinfo()
+for k, v in sysinfo.items():
+     row["%s" % k] = v
+timezone = plug.timezone
+for k, v in timezone.items():
+     row["%s" % k] = v
+emetermonthly =  plug.get_emeter_monthly(year=2017)
+for k, v in emetermonthly.items():
+     row["day%s" % k] = v
+realtime = plug.get_emeter_realtime()
+for k, v in realtime.items():
+     row["%s" % k] = v
+row['alias'] = plug.alias
+row['time'] =  plug.time.strftime('%m/%d/%Y %H:%M:%S')
+row['ledon'] =  plug.led
+row['systemtime'] = datetime.datetime.now().strftime('%m/%d/%Y %H:%M:%S')
+json_string = json.dumps(row)
+print(json_string)
+The code is basically a small tweak on the example code provided with the pyHS100 code. This code allows you to access the HS110 that I have. My PC and my smart meter are on the same WiFi which can't be 5G.
+
+Example Data
+
+{"hour19": 0.036, "hour20": 0.021, "hour21": 0.017, "sw_ver": "1.1.1 Build 160725 Rel.164033", "hw_ver": "1.0", "mac": "50:C7:BF:B1:95:D5", "type": "IOT.SMARTPLUGSWITCH", "hwId": "60FF6B258734EA6880E186F8C96DDC61", "fwId": "060BFEA28A8CD1E67146EB5B2B599CC8", "oemId": "FFF22CFF774A0B89F7624BFC6F50D5DE", "dev_name": "Wi-Fi Smart Plug With Energy Monitoring", "model": "HS110(US)", "deviceId": "8006ECB1D454C4428953CB2B34D9292D18A6DB0E", "alias": "Tim Spann's MiniFi Controller SmartPlug - Desk1", "icon_hash": "", "relay_state": 1, "on_time": 161599, "active_mode": "schedule", "feature": "TIM:ENE", "updating": 0, "rssi": -32, "led_off": 0, "latitude": 40.268216, "longitude": -74.529088, "index": 18, "zone_str": "(UTC-05:00) Eastern Daylight Time (US & Canada)", "tz_str": "EST5EDT,M3.2.0,M11.1.0", "dst_offset": 60, "day12": 0.074, "current": 0.04011, "voltage": 122.460974, "power": 1.8772, "total": 0.074, "time": "12/21/2017 13:21:52", "ledon": true, "systemtime": "12/21/2017 13:21:53"}
+As you can see we only get the hours and days where we had usage. Since this is new, I don't have them all.
+
+I created my schema to handle all the days of a month and all the hours of a day.
+
+We are going to have a sparse table. If I was monitoring millions of devices, I would put this in Apache HBase. I may do that later.
+
+Let's create an HDFS directory for Loading Apache ORC Files
+
+hdfs dfs -mkdir -p /smartPlug 
+hdfs dfs -chmod -R 777 /smartPlug
+
+Table DDL
+
+CREATE EXTERNAL TABLE IF NOT EXISTS smartPlug (hour19 DOUBLE, hour20 DOUBLE, hour21 DOUBLE, hour22 DOUBLE, hour23 DOUBLE, hour18 DOUBLE, hour17 DOUBLE, hour16 DOUBLE, hour15 DOUBLE, hour14 DOUBLE, hour13 DOUBLE, hour12 DOUBLE, hour11 DOUBLE, hour10 DOUBLE, hour9 DOUBLE, hour8 DOUBLE, hour7 DOUBLE, hour6 DOUBLE, hour5 DOUBLE, hour4 DOUBLE, hour3 DOUBLE, hour2 DOUBLE, hour1 DOUBLE, hour0 DOUBLE, sw_ver STRING, hw_ver STRING, mac STRING, type STRING, hwId STRING, fwId STRING, oemId STRING, dev_name STRING, model STRING, deviceId STRING, alias STRING, icon_hash STRING, relay_state INT, on_time INT, feature STRING, updating INT, rssi INT, led_off INT, latitude DOUBLE, longitude DOUBLE, index INT, zone_str STRING, tz_str STRING, dst_offset INT, day31 DOUBLE, day30 DOUBLE, day29 DOUBLE, day28 DOUBLE, day27 DOUBLE, day26 DOUBLE, day25 DOUBLE, day24 DOUBLE, day23 DOUBLE, day22 DOUBLE, day21 DOUBLE, day20 DOUBLE, day19 DOUBLE, day18 DOUBLE, day17 DOUBLE, day16 DOUBLE, day15 DOUBLE, day14 DOUBLE, day13 DOUBLE, day12 DOUBLE, day11 DOUBLE, day10 DOUBLE, day9 DOUBLE, day8 DOUBLE, day7 DOUBLE, day6 DOUBLE, day5 DOUBLE, day4 DOUBLE, day3 DOUBLE, day2 DOUBLE, day1 DOUBLE, current DOUBLE, voltage DOUBLE, power DOUBLE, total DOUBLE, time STRING, ledon BOOLEAN, systemtime STRING) STORED AS ORC
+LOCATION '/smartPlug' 
+A Simple Query on Some of the Variables
+
+select `current`,voltage, power,total,time,systemtime, on_time, rssi, latitude, longitude from smartPlug
+
+Note that current is a special word in SQL so we tick it.
+
+An Apache Calcite Query Inside Apache NiFi
+
+SELECT * FROM FLOWFILE WHERE "current" > 0
+With the Python API I can turn it off, so don't monitor then. In an updated article I will add a few smart plugs and turn them on and off based on things occurring. Perhaps turn off a light when no motion detected. We can do anything with Apache NiFi, Apache MiniFi and Python. The API also allows for turning the green LED light on the plug on and off.
+
+
+
+
+
+
+
+
+
+
+
+The Screen Prints above are from the IoS version of the TPLink KASA app, which let's you configure and monitor your plug. For many people that's good enough, but not for me.
+
+
+
+Resources
+
+smartplugprocessing.xml
+
+monitorpowerlocal.xml
+
+https://github.com/GadgetReactor/pyHS100
+
+https://pypi.python.org/pypi/pyHS100
+
+pip3 install pyhs100
+
+https://github.com/tspannhw/nifi-smartplug/tree/master
+
+Building schemas is tedious work and fraught with errors. The InferAvroSchema processor can get you started. It generates a compliant schema for use. There is one caveat, you have to make sure you are using Apache Avro safe field names. I have a custom processor that will clean your attributes if you need them Avro-safe. See processor listed below.
+
+Example Flow Utilizing InferAvroSchema
+
+
+
+InferAvroSchema Details
+
+
+
+Step 0: Use Apache NiFi to Convert Data to JSON or CSV
+
+Step 1: Send JSON or CSV Data to InferAvroSchema
+
+I recommend setting output destination to flowfile-attribute, input content type to json, pretty avro output to true.
+
+Step 2: The New schema is now in attribute: inferred.avro.schema.
+
+inferred.avro.schema
+{ "type" : "record", "name" : "schema1", "fields" : [ { "name" : "table", "type" : "string", "doc" : "Type inferred from '\"schema1.tableName\"'" } ] } 
+This schema can then be used for conversions directly or stored in Hortonworks Schema Registry or Apache NiFi Built-in Avro Registry.
+
+Now you can use it for ConvertRecord, QueryRecord and other Record processing.
+
+Example Generated Schema in Avro-JSON Format Stored in Hortonworks Schema Registry:
+
+
+
+Source: https://github.com/tspannhw/nifi-attributecleaner-processor
+
+
+
+ 5,083 Views  
+This article is featured in the new DZone Guide to IoT: Harnessing Device Data. Get your free copy for more insightful articles, industry statistics, and more!
+
+Enterprise and industrial IoT projects have several more intense requirements than the standards for personal and home devices. The security needs are tighter with full lockdown from source to cloud or on-premise endpoint. At a minimum, solutions need to use SSL or encrypted channels for communication.
+
+Another major feature required is to have support for many device types, from very tiny to large-scale industrial devices costing thousands of dollars. Many devices may include a GPU like the NVidia Jetson TX1, or an add-on compute device like the Movidius. Important features for rugged hardware are airtight cases for devices and backup power supplies. The ability to run without power for extended periods of time in at least a minimal logging mode can be important in remote locations.
+
+These devices need to be remotely monitored, controlled, and updated. These command and control abilities become crucial when patches are required or changes to functionality occur. This can often happen frequently due to security requirements. These processes need to be automated.
+
+Another key requirement is to have full end-to-end data provenance of every change to every piece of data as it travels through the system for full auditing and data governance purposes. GDPR and other laws may be applicable in many sensor-capturing situations, especially regarding camera ingestion.
+
+Sensor and device data that cannot be used with enterprise analytic tools or combined with corporate data in a Hadoop data lake is nearly worthless. Combining device data with other data sources, such as weather or transactional data, is critical for prescriptive and predictive analytics at scale.
+
+For my clients, these are some common use cases: container truck location monitoring, delivery truck monitoring, service truck and driver monitoring, security camera monitoring, utility asset anomaly detection, and temperature/humidity filtering for devices. The thing to remember is that while you can start small with a couple of inexpensive devices, a few sensors, a few data points, hourly data, and no SLAs, you should not plan your system this way. Enterprise and industrial IoT will quickly spread to millions of sensors, millions of devices, and continuous data streams.
+
+If you do not plan to handle the volume, velocity, variety, and veracity of data, you will be doomed. If this sounds familiar, this is the big data use case. We just found the motherload of all data. With so many sensors packaged into so many devices located everywhere, IoT data can dwarf all other sources combined. Every truck, every item on a manufacturing floor, and every field sensor can quickly produce billions of streams of data per second with no end in sight. So, I am not giving you a quick start. This is your future-proof infrastructure to scale to massive industrial IoT use cases. This is a proven approach, so let's begin.
+
+The first step is to determine what you need to monitor and to obtain a device that has the proper sensors, processing power, environmental suitability, and connectivity your use case demands. The good news is that you do not have to make a difficult decision on software. Apache NiFi is the choice for ingesting any type of data from any source, and it's trivial to connect to these devices. Depending on the size and type of the device, you can choose from a MiNiFi C++ Agent or MiNiFi Java agent. If the device is too small (like an Onion Omega) to support those, you can install a Micropython or C-based library to send MQTT messages. These messages can be sent to an aggregator, say, a Raspberry Pi-sized device attached to your truck. This will allow for localized aggregation, routing, filtering, compression, and even execution of machine learning and deep learning models at that edge. You will also have full control over how and when data is sent remotely to control data transmission costs, energy usage, and unnecessary data propagation.
+
+Another feature that makes the MiNiFi and NiFi combination a no-brainer is data provenance. This is built into these tools, and transparently tracks all of the hoops that data travels through, from ingest on a device until it lands in its final home in the cloud or an on-premise data lake. Having encrypted the data and using HTTPS is great, but not knowing who touched the data — and when they did so — along the way is a weakness in most IIoT dataflows, but not in our software.
+
+Edge Device
+Let's dive into a use case with an NVidia Jetson TX1 device, with camera enabled, as our edge device. In my example setup, we have 4GB of RAM, 128GB of storage, WiFi, a USB web camera, and a 256-core Maxwell GPU. We are running a MiNiFi Java Agent along with Python, Apache MXNet, and NVidia's TensorRT. We run deep learning models on the edge device and send images, GPS data, sensor data, and deep learning results if values exceed norms. Using the site-to-site protocol over HTTPS, data is sent to an Apache NiFi cluster (HDF 3.1).
+
+Ingestion Platform
+The data arrives securely for further processing, additional TensorFlow processing, and data augmentation in the cases of weather and geolocation. This data is streaming into a Hadoop-based big data platform for analysis, additional machine learning with Apache Spark, and queries via Apache Hive. The primary ingestion method is using Apache NiFi, which handles hundreds of data sources and many data types, and is ideal for simple event processing.
+
+Data Bus
+There are many ways to process our filtered data for storage and machine learning. The most common — and my recommended method — is using Apache Kafka. This is well integrated with Apache NiFi, Apache Storm, Streaming Analytics Manager, Apache Spark, Apache Beam, Apache Flink, and more. This data bus allows for the decoupling of the ingestion platform from our streaming and processing engines. Apache Kafka 1.0 also has support for schemas that make it easy for us to treat data as records from end-to-end when we have data structured enough to include a schema. We often have time series-oriented data with many small values and a timestamp.
+
+Stream Processing Platform
+The two main tools I recommend for most processing use cases are Streaming Analytics Manager and Apache Spark Streaming. The combination of the two supports most main use cases, SQL processing, joins, windowing, and executing PMML machine learning models. The Stream Processing platform is ideal for processing data in "real-time" as it comes out of the Apache Kafka topics. In SAM, for example, we can use Apache Calcite to query and manipulate these records via SQL in-stream.
+
+Scalable Storage Platform
+We need to store several types of data, including key-value, time series, structured table data, unstructured data like images and videos, and semi-structured data like tweets and text blobs. The perfect, safest place to do this is in Apache Hadoop. We can store trillions of rows and petabytes of data and still query it as needed. With the upcoming Hadoop 3.0 release, the platform will support even more data, more files, and more capabilities. We store data as files in HDFS, as well as in Apache Hive Acid tables and in Apache HBase. For some of the faster ingest cases, we store data in Apache Druid for sub-second OLAP analytics.
+
+Data Science Platform
+In our case, our data science platform leverages Apache Zeppelin for notebooks to experiment, explore, and run analytics and machine learning. We use Apache Hive and Apache Phoenix to run SQL queries to analyze, transform, and organize our data. We use Apache Spark to run various machine learning algorithms and Spark SQL queries, and we have access to a steady stream of real-time data, as well as the massive historic datasets stored in our Apache Hadoop data lake. It is very easy to deploy our models trained on our massive datasets to the streaming processing engines to provide real-time insights with predictive models.
+
+Architecture
+The nice thing is that, as shown below in the chart, this is all one platform running a common security and authentication system and common administration via Apache Ambari. Our global data management platform includes everything that is needed for enterprise and industrial IoT. The GDMP is made up of HDP, HDF, DPS, and services that are built around an open-source system.
+
+Deep Learning
+At each layer in the architecture, we can run various deep learning libraries as needed. At the edge, we run Nvidia TensorRT, Apache MXnet, and TensorFlow prebuilt models to scan web camera images for anomalies. In the ingestion phase, Apache NiFi can use TensorFlow, Apache OpenNLP, Apache Tika, and Apache MXnet for sentiment analysis, image analysis, document analysis, and other processing. The streaming engines are all well integrated with deep learning packages. Finally, our query and analytics platform notebooks can run various Apache MXnet and TensorFlow models, as well.
+
+We can also run Apache HiveMall for machine learning in our Apache Hive queries. In the end, we have a continuously growing, always-learning, always-on, scalable platform for developing real solutions for IoT.
+
+The funny part is that except for the little piece on the device and some of the ingestion logic, it's the same platform that addresses the same use cases for real-time financial information, real-time social media data, real-time CDC, REST feeds, and thousands of other data sources, types, and origins. In the final analysis, we see that enterprise and industrial IoT are not that much different in their requirements once we get past the first ten meters.
+
+This article is featured in the new DZone Guide to IoT: Harnessing Device Data. Get your free copy for more insightful articles, industry statistics, and more!
+
+
