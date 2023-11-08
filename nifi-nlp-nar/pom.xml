@@ -19,7 +19,7 @@
     <parent>
         <groupId>com.dataflowdeveloper</groupId>
         <artifactId>nlp-processor</artifactId>
-        <version>1.11.3</version>
+        <version>1.23.2</version>
     </parent>
 
     <artifactId>nifi-nlp-nar</artifactId>
@@ -33,8 +33,7 @@
         <dependency>
             <groupId>com.dataflowdeveloper</groupId>
             <artifactId>nifi-nlp-processors</artifactId>
-            <version>1.11.3</version>
+            <version>1.23.2</version>
         </dependency>
     </dependencies>
-
 </project>

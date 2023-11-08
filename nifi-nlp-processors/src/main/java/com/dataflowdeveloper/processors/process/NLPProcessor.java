@@ -197,7 +197,7 @@ public class NLPProcessor extends AbstractProcessor {
 			}
 
 			session.transfer(flowFile, REL_SUCCESS);
-			session.commit();
+			session.commitAsync();
 		} catch (final Throwable t) {
 			getLogger().error("Unable to process NLP Processor file " + t.getLocalizedMessage());
 			getLogger().error("{} failed to process due to {}; rolling back session", new Object[] { this, t });

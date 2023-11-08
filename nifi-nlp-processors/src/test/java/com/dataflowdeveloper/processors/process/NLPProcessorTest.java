@@ -27,8 +27,8 @@ import org.apache.nifi.processor.util.StandardValidators;
 import org.apache.nifi.util.MockFlowFile;
 import org.apache.nifi.util.TestRunner;
 import org.apache.nifi.util.TestRunners;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class NLPProcessorTest {
 
@@ -55,7 +55,7 @@ public class NLPProcessorTest {
     		   .dynamic(true)
     		   .build();
     
-	@Before
+	@BeforeEach
 	public void init() {
 		testRunner = TestRunners.newTestRunner(NLPProcessor.class);
 	}
@@ -65,7 +65,7 @@ public class NLPProcessorTest {
 
 		OpenNLPService nlp = new OpenNLPService();
 
-		List<Organization> orgs = nlp.getOrganizations( "/Users/tspann/Downloads/nifi-1.11.3/lib", "American Airlines is the worst airline ever." );
+		List<Organization> orgs = nlp.getOrganizations( "/Users/tspann/Downloads/opennlp", "Q:  What is the stock value for Apple?" );
 
 		for (Organization org : orgs) {
 			System.out.println("org=" + org.getOrganization());
@@ -74,7 +74,7 @@ public class NLPProcessorTest {
 
 	@Test
 	public void testProcessor() {
-		testRunner.setProperty(EXTRA_RESOURCE, "/Users/tspann/Downloads/nifi-1.11.3/lib");
+		testRunner.setProperty(EXTRA_RESOURCE, "/Users/tspann/Downloads/opennlp");
 		
 		try {
 			testRunner.enqueue(new FileInputStream(new File("src/test/resources/large.txt")));

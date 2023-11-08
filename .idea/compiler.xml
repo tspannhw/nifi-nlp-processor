@@ -11,9 +11,9 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="nifi-nlp-nar" target="1.8" />
-      <module name="nifi-nlp-processors" target="1.8" />
-      <module name="nlp-processor" target="1.8" />
+      <module name="nifi-nlp-nar" target="17" />
+      <module name="nifi-nlp-processors" target="17" />
+      <module name="nlp-processor" target="17" />
     </bytecodeTargetLevel>
   </component>
 </project>
